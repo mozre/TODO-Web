@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="TODO-Web:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="TODO-SSM.war">
+      <element id="artifact" artifact-name="TODO-Web:war exploded" />
+    </root>
+  </artifact>
+</component>
