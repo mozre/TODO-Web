@@ -5,24 +5,41 @@
     <resultMap id="BaseResultMap" type="com.ckt.entity.User">
         <result column="mem_id" property="mem_id" jdbcType="INTEGER"/>
         <result column="mem_name" property="mem_name" jdbcType="VARCHAR"/>
-        <result column="mem_password" property="mem_password" jdbcType="VARCHAR"/>
         <result column="mem_phone_num" property="mem_phone_num" jdbcType="VARCHAR"/>
-        <result column="mem_level" property="men_level" jdbcType="INTEGER"/>
+        <result column="mem_level" property="mem_level" jdbcType="INTEGER"/>
+        <result column="mem_email" property="mem_email" jdbcType="VARCHAR"/>
+        <result column="mem_icon" property="mem_icon" jdbcType="VARCHAR"/>
+        <result column="token" property="token" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <sql id="Base_Column_List" >
-        mem_id, men_username, mem_password,men_level
+    <sql id="Base_Column_List">
+        mem_id, men_username, mem_password,mem_level
     </sql>
 
     <select id="selectByPrimaryKey" parameterType="int" resultType="com.ckt.entity.User">
         select * from `member` where user.mem_id = #{mem_id}
     </select>
 
-    <select id="sele"  resultType="com.ckt.entity.User" >
-        select * from `member` where mem_name = #{mem_name} and mem_password =#{mem_password}
+    <select id="sele" resultType="com.ckt.entity.User">
+        select * from `member` where mem_email = #{mem_email} and mem_password =#{mem_password}
+    </select>
+
+    <select id="getToken" parameterType="int" resultType="String">
+        SELECT token FROM member  where member.mem_id = #{mem_id}
+    </select>
+
+    <update id="updateToken">
+        UPDATE member SET token = #{token},token_create_time = #{token_create_time} WHERE mem_id = #{mem_id}
+    </update>
+    <select id="loginStatus" resultType="com.ckt.entity.User">
+        select * from `member` where mem_email = #{mem_email} and token =#{token}
     </select>
 
 
+    <insert id="insert">
 
+        INSERT INTO member(mem_name,mem_phone_num,mem_email,mem_icon,mem_level,mem_password) VALUES (#{mem_name},#{mem_phone_num},#{mem_email},#{mem_icon},#{mem_level},#{mem_password})
+
+    </insert>
 
 </mapper>

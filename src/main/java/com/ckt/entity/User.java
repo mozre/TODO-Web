@@ -13,8 +13,11 @@ public class User {
 
     private String mem_phone_num;
 
-    private Integer men_level;
+    private Integer mem_level;
 
+    private String mem_email;
+
+    private String mem_icon;
 
     @Override
     public String toString() {
@@ -23,7 +26,7 @@ public class User {
                 ", mem_name='" + mem_name + '\'' +
                 ", mem_password='" + mem_password + '\'' +
                 ", mem_phone_num=" + mem_phone_num +
-                ", men_level=" + men_level +
+                ", mem_level=" + mem_level +
                 '}';
     }
 
@@ -47,12 +50,12 @@ public class User {
         return mem_phone_num;
     }
 
-    public Integer getMen_level() {
-        return men_level;
+    public Integer getMem_level() {
+        return mem_level;
     }
 
-    public void setMen_level(Integer men_level) {
-        this.men_level = men_level;
+    public void setMem_level(Integer mem_level) {
+        this.mem_level = mem_level;
     }
 
     public void setMem_id(Integer mem_id) {
@@ -71,12 +74,29 @@ public class User {
         this.mem_phone_num = mem_phone_num;
     }
 
+    public String getMem_email() {
+        return mem_email;
+    }
 
-    public User(Integer mem_id, String mem_name, String mem_password, String mem_phone_num, Integer men_level) {
+    public void setMem_email(String mem_email) {
+        this.mem_email = mem_email;
+    }
+
+    public String getMem_icon() {
+        return mem_icon;
+    }
+
+    public void setMem_icon(String mem_icon) {
+        this.mem_icon = mem_icon;
+    }
+
+    public User(Integer mem_id, String mem_name, String mem_password, String mem_phone_num, Integer men_level, String mem_email,String mem_icon) {
         this.mem_id = mem_id;
         this.mem_name = mem_name;
         this.mem_password = mem_password;
         this.mem_phone_num = mem_phone_num;
-        this.men_level = men_level;
+        this.mem_level = men_level;
+        this.mem_email = mem_email;
+        this.mem_icon = mem_icon;
     }
 }
