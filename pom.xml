@@ -259,6 +259,11 @@
             <artifactId>lucene-highlighter</artifactId>
             <version>${lucene.version}</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.mangofactory</groupId>-->
+            <!--<artifactId>swagger-springmvc</artifactId>-->
+            <!--<version>0.6.5</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>junit</groupId>

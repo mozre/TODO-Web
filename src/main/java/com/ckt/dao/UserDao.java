@@ -1,6 +1,7 @@
 package com.ckt.dao;
 
 import com.ckt.entity.User;
+import com.ckt.utils.MyBatisDao;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
  * Created by mozre on 2017/5/18.
  */
 
-
+@MyBatisDao
 public interface UserDao {
 
     void insert(User record);

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ckt.dao.ProjectDao">
+
+    <resultMap id="BaseResultMap" type="com.ckt.entity.Project">
+        <result column="project_id" property="projectId"/>
+        <result column="team_id" property="teamId"/>
+        <result column="mem_id" property="memId"/>
+        <result column="project_name" property="projectTitle"/>
+        <result column="project_description" property="projectSummary"/>
+        <result column="project_create_time" property="createTime"/>
+        <result column="project_end_time" property="endTime"/>
+        <result column="project_latest_update_time" property="lastUpdateTime"/>
+        <result column="project_acomplish_progress" property="accomplishProgress"/>
+        <result column="project_sprint_count" property="sprint"/>
+    </resultMap>
+    <!--<resultMap id="BaseResultMap" type="com.ckt.entity.Project">-->
+    <!--<result column="project_id" property="projectId" jdbcType="VARCHAR"/>-->
+    <!--<result column="team_id" property="teamId" jdbcType="INTEGER"/>-->
+    <!--<result column="mem_id" property="memId" jdbcType="INTEGER"/>-->
+    <!--<result column="project_name" property="projectTitle" jdbcType="VARCHAR"/>-->
+    <!--<result column="project_description" property="projectSummary" jdbcType="VARCHAR"/>-->
+    <!--<result column="project_create_time" property="createTime" jdbcType="VARCHAR"/>-->
+    <!--<result column="project_end_time" property="endTime" jdbcType="VARCHAR"/>-->
+    <!--<result column="project_latest_update_time" property="lastUpdateTime" jdbcType="VARCHAR"/>-->
+    <!--<result column="project_acomplish_progress" property="accomplishProgress" jdbcType="VARCHAR"/>-->
+    <!--<result column="project_sprint_count" property="sprint" jdbcType="INTEGER"/>-->
+    <!--</resultMap>-->
+
+
+    <insert id="insertProject">
+        INSERT INTO
+        project(project_id,team_id,mem_id,project_name,project_description,project_create_time,project_end_time,project_latest_update_time,project_acomplish_progress,project_sprint_count)
+        VALUES
+        (#{projectId},#{teamId},#{memId},#{projectTitle},#{projectSummary},#{createTime},#{endTime},#{lastUpdateTime},#{accomplishProgress},#{sprint})
+    </insert>
+
+    <select id="getProject" resultType="com.ckt.entity.Project">
+        SELECT *  FROM  project WHERE project_id = #{projectId}
+    </select>
+</mapper>
