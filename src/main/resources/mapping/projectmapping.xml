@@ -35,7 +35,10 @@
         (#{projectId},#{teamId},#{memId},#{projectTitle},#{projectSummary},#{createTime},#{endTime},#{lastUpdateTime},#{accomplishProgress},#{sprint})
     </insert>
 
-    <select id="getProject" resultType="com.ckt.entity.Project">
+    <select id="getProject" resultMap="BaseResultMap">
         SELECT *  FROM  project WHERE project_id = #{projectId}
+    </select>
+    <select id="getProjects" resultMap="BaseResultMap">
+        SELECT * FROM  project WHERE mem_id = #{memId}
     </select>
 </mapper>

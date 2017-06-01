@@ -6,6 +6,7 @@ import com.ckt.entity.Project;
 import com.ckt.entity.User;
 import com.ckt.service.ProjectService;
 import com.ckt.service.UserService;
+import com.ckt.utils.HTTPConstant;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * Created by mozre on 2017/5/25.
@@ -69,6 +71,31 @@ public class ProjectController {
         }
 
         return object.toJSONString();
+    }
+
+
+    @RequestMapping(value = "/project", method = RequestMethod.GET)
+    @ResponseBody
+    public String getProjects(HttpServletRequest request, HttpServletResponse response) {
+        JSONObject resultJson = new JSONObject();
+        try {
+            String email = request.getParameter("email");
+            String token = request.getParameter("token");
+            User user = userService.loginStatus(email, token);
+            if (user == null) {
+                resultJson.put(HTTPConstant.RESLUT_CODE, 300);
+            } else {
+                List<Project> projects = projectService.getProjects(user.getMem_id());
+                resultJson.put(HTTPConstant.RESLUT_CODE, 200);
+                resultJson.put("data", projects);
+            }
+        } catch (Exception e) {
+            resultJson.put(HTTPConstant.RESLUT_CODE, 400);
+            e.printStackTrace();
+        }
+
+
+        return resultJson.toJSONString();
     }
 
 }

@@ -5,6 +5,7 @@ import com.ckt.entity.Project;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by admin on 2017/5/25.
@@ -24,5 +25,10 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public Project getProject(String id) {
         return projectDao.getProject(id);
+    }
+
+    @Override
+    public List<Project> getProjects(Integer mem_id) {
+        return projectDao.getProjects(mem_id);
     }
 }
