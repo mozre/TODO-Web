@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ckt.dao.PlanDao">
+
+    <resultMap id="BaseResultMap" type="com.ckt.entity.Plan">
+        <result column="plan_id" property="planID"/>
+        <result column="mem_id" property="memID"/>
+        <result column="project_id" property="projectID"/>
+        <result column="plan_name" property="planName"/>
+        <result column="plan_descrition" property="planDescrition"/>
+        <result column="plan_start_time" property="planStartTime"/>
+        <result column="plan_end_time" property="planEndTime"/>
+        <result column="plan_create_time" property="planCreateTime"/>
+        <result column="plan_latest_update_time" property="planLastUpdateTime"/>
+        <result column="plan_state" property="planState"/>
+        <result column="plan_acomplish_progress" property="planAcomplishProgress"/>
+        <result column="plan_real_spend_time" property="planRealSpendTime"/>
+        <result column="sprint" property="sprint"/>
+    </resultMap>
+
+    <insert id="newPlan">
+        INSERT  INTO plan
+        (plan_id,mem_id,project_id,plan_name,plan_descrition,plan_start_time,plan_end_time,plan_create_time,plan_latest_update_time,plan_state,plan_acomplish_progress,plan_real_spend_time,sprint)
+        VALUES
+        (#{planID},#{memID},#{projectID},#{planName},#{planDescrition},#{planStartTime},#{planEndTime},#{planCreateTime},#{planLastUpdateTime},#{planState},#{planAcomplishProgress},#{planRealSpendTime},#{sprint})
+    </insert>
+
+    <select id="getPlans" resultMap="BaseResultMap">
+        SELECT * FROM plan where mem_id = #{memID}
+    </select>
+
+</mapper>
