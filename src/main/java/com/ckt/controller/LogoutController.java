@@ -26,11 +26,10 @@ public class LogoutController {
     @RequestMapping(value = "/user/logout", method = RequestMethod.GET)
     public String logout(HttpServletRequest request, HttpServletResponse response) {
 
-        String email = request.getParameter("email");
-        String token = request.getParameter("token");
         try {
+            String email = request.getParameter("email");
+            String token = request.getParameter("token");
             User user = userService.loginStatus(email, token);
-            int id = user.getMem_id();
             userService.updateToken(user.getMem_id(), HTTPUtils.newToken());
         } catch (Exception e) {
             e.printStackTrace();

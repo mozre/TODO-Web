@@ -13,6 +13,7 @@
         <result column="project_latest_update_time" property="lastUpdateTime"/>
         <result column="project_acomplish_progress" property="accomplishProgress"/>
         <result column="project_sprint_count" property="sprint"/>
+        <result column="project_visibility" property="projectVisibility"/>
     </resultMap>
     <!--<resultMap id="BaseResultMap" type="com.ckt.entity.Project">-->
     <!--<result column="project_id" property="projectId" jdbcType="VARCHAR"/>-->
@@ -30,9 +31,9 @@
 
     <insert id="insertProject">
         INSERT INTO
-        project(project_id,team_id,mem_id,project_name,project_description,project_create_time,project_end_time,project_latest_update_time,project_acomplish_progress,project_sprint_count)
+        project(project_id,team_id,mem_id,project_name,project_description,project_create_time,project_end_time,project_latest_update_time,project_acomplish_progress,project_sprint_count,project_visibility)
         VALUES
-        (#{projectId},#{teamId},#{memId},#{projectTitle},#{projectSummary},#{createTime},#{endTime},#{lastUpdateTime},#{accomplishProgress},#{sprint})
+        (#{projectId},#{teamId},#{memId},#{projectTitle},#{projectSummary},#{createTime},#{endTime},#{lastUpdateTime},#{accomplishProgress},#{sprint},#{projectVisibility})
     </insert>
 
     <select id="getProject" resultMap="BaseResultMap">

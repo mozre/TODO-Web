@@ -1,7 +1,7 @@
 package com.ckt.entity;
 
 /**
- * Created by admin on 2017/5/25.
+ * Created by mozre on 2017/5/25.
  */
 public class Task {
 
@@ -10,10 +10,8 @@ public class Task {
     private String taskTitle;
     //任务内容
     private String taskContent;
-    //任务创建人
-    private String createUerId;
-    //任务执行人
-    private String execUserId;
+    //创建人id
+    private int mem_id;
     //任务类别
     private int taskType;
     //任务优先级
@@ -21,17 +19,17 @@ public class Task {
     //任务状态
     private int taskStatus;
     //任务开始时间
-    private long taskStartTime;
+    private String taskStartTime;
     //任务预计花费时间EventTask
-    private float taskPredictTime;
+    private String taskPredictTime;
     //任务提醒时间
-    private long taskRemindTime;
+    private String taskRemindTime;
     //任务实际花费时间
-    private float taskRealSpendTime;
+    private String taskRealSpendTime;
     //任务所属计划
     private String planId;
     //任务最新更新时间
-    private long taskUpdateTime;
+    private String taskUpdateTime;
 
 
     public String getTaskId() {
@@ -58,20 +56,12 @@ public class Task {
         this.taskContent = taskContent;
     }
 
-    public String getCreateUerId() {
-        return createUerId;
+    public int getMem_id() {
+        return mem_id;
     }
 
-    public void setCreateUerId(String createUerId) {
-        this.createUerId = createUerId;
-    }
-
-    public String getExecUserId() {
-        return execUserId;
-    }
-
-    public void setExecUserId(String execUserId) {
-        this.execUserId = execUserId;
+    public void setMem_id(int mem_id) {
+        this.mem_id = mem_id;
     }
 
     public int getTaskType() {
@@ -98,35 +88,35 @@ public class Task {
         this.taskStatus = taskStatus;
     }
 
-    public long getTaskStartTime() {
+    public String getTaskStartTime() {
         return taskStartTime;
     }
 
-    public void setTaskStartTime(long taskStartTime) {
+    public void setTaskStartTime(String taskStartTime) {
         this.taskStartTime = taskStartTime;
     }
 
-    public float getTaskPredictTime() {
+    public String getTaskPredictTime() {
         return taskPredictTime;
     }
 
-    public void setTaskPredictTime(float taskPredictTime) {
+    public void setTaskPredictTime(String taskPredictTime) {
         this.taskPredictTime = taskPredictTime;
     }
 
-    public long getTaskRemindTime() {
+    public String getTaskRemindTime() {
         return taskRemindTime;
     }
 
-    public void setTaskRemindTime(long taskRemindTime) {
+    public void setTaskRemindTime(String taskRemindTime) {
         this.taskRemindTime = taskRemindTime;
     }
 
-    public float getTaskRealSpendTime() {
+    public String getTaskRealSpendTime() {
         return taskRealSpendTime;
     }
 
-    public void setTaskRealSpendTime(float taskRealSpendTime) {
+    public void setTaskRealSpendTime(String taskRealSpendTime) {
         this.taskRealSpendTime = taskRealSpendTime;
     }
 
@@ -138,11 +128,12 @@ public class Task {
         this.planId = planId;
     }
 
-    public long getTaskUpdateTime() {
+    public String getTaskUpdateTime() {
         return taskUpdateTime;
     }
 
-    public void setTaskUpdateTime(long taskUpdateTime) {
+    public void setTaskUpdateTime(String taskUpdateTime) {
         this.taskUpdateTime = taskUpdateTime;
     }
+
 }

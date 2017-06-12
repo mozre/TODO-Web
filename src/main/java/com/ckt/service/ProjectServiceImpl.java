@@ -31,4 +31,13 @@ public class ProjectServiceImpl implements ProjectService {
     public List<Project> getProjects(Integer mem_id) {
         return projectDao.getProjects(mem_id);
     }
+
+    @Override
+    public void sceenProject(List<Project> data) {
+        for (Project project : data) {
+            if (project.getProjectVisibility() == 0) {
+                data.remove(project);
+            }
+        }
+    }
 }

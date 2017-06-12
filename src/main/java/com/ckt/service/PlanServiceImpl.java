@@ -23,7 +23,7 @@ public class PlanServiceImpl implements PlanService {
     }
 
     @Override
-    public List<Plan> getPlans(int id) {
-        return planDao.getPlans(id);
+    public List<Plan> getPlans(int mem_id, int sprint, int status) {
+        return planDao.getPlans(mem_id,sprint,status);
     }
 }

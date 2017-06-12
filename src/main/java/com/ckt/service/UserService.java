@@ -42,4 +42,7 @@ public interface UserService {
     void updateToken(int userId,String token);
 
     User loginStatus(String email,String token);
+
+    User convertSignupData(String jsonStr) throws Exception;
+    Integer getMemId(String email);
 }

@@ -26,7 +26,7 @@
     </insert>
 
     <select id="getPlans" resultMap="BaseResultMap">
-        SELECT * FROM plan where mem_id = #{memID}
+        SELECT * FROM plan where mem_id = #{memID} AND sprint = #{sprint} AND plan_state = #{planState}
     </select>
 
 </mapper>

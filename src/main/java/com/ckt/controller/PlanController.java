@@ -6,7 +6,7 @@ import com.ckt.entity.Plan;
 import com.ckt.entity.User;
 import com.ckt.service.PlanService;
 import com.ckt.service.UserService;
-import com.ckt.utils.HTTPConstant;
+import com.ckt.utils.HttpConstant;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,7 +38,7 @@ public class PlanController {
             String token = request.getParameter("token");
             User user = userService.loginStatus(email, token);
             if (user == null) {
-                resultJson.put(HTTPConstant.RESLUT_CODE, 300);
+                resultJson.put(HttpConstant.RESLUT_CODE, 300);
             } else {
                 Plan plan = new Plan();
                 JSONObject dataJson = JSON.parseObject(request.getParameter("plan"));
@@ -56,10 +56,10 @@ public class PlanController {
                 plan.setSprint(dataJson.getInteger("sprint"));
                 plan.setPlanAcomplishProgress(dataJson.getString("plan_acomplish_progress"));
                 planService.newPlan(plan);
-                resultJson.put(HTTPConstant.RESLUT_CODE, 200);
+                resultJson.put(HttpConstant.RESLUT_CODE, 200);
             }
         } catch (Exception e) {
-            resultJson.put(HTTPConstant.RESLUT_CODE, 400);
+            resultJson.put(HttpConstant.RESLUT_CODE, 400);
             e.printStackTrace();
         }
 
@@ -75,14 +75,16 @@ public class PlanController {
             String token = request.getParameter("token");
             User user = userService.loginStatus(email, token);
             if (user == null) {
-                resultJson.put(HTTPConstant.RESLUT_CODE, 300);
+                resultJson.put(HttpConstant.RESLUT_CODE, 300);
             } else {
-                List<Plan> planList = planService.getPlans(user.getMem_id());
+                int sprint = Integer.valueOf(request.getParameter("sprint"));
+                int status = Integer.valueOf(request.getParameter("status"));
+                List<Plan> planList = planService.getPlans(user.getMem_id(), sprint, status);
                 resultJson.put("data", planList);
-                resultJson.put(HTTPConstant.RESLUT_CODE, 200);
+                resultJson.put(HttpConstant.RESLUT_CODE, 200);
             }
         } catch (Exception e) {
-            resultJson.put(HTTPConstant.RESLUT_CODE, 400);
+            resultJson.put(HttpConstant.RESLUT_CODE, 400);
             e.printStackTrace();
         }
         return resultJson.toJSONString();

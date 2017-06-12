@@ -10,5 +10,5 @@ import java.util.List;
 public interface PlanService {
 
     void newPlan(Plan plan);
-    List<Plan> getPlans(int id);
+    List<Plan> getPlans(int mem_id,int sprint,int status);
 }

@@ -13,7 +13,7 @@
             "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
         }
     },
-    "host": "api.todo.com",
+    "host": "10.120.1.135:8080",
     "basePath": "/todo",
     "tags": [
         {
@@ -43,7 +43,7 @@
                 "parameters": [
                     {
                         "in": "body",
-                        "name": "body",
+                        "name": "data",
                         "description": "Created user object",
                         "required": true,
                         "schema": {
@@ -56,7 +56,10 @@
                         "description": "successful operation"
                     },
                     "300": {
-                        "description": "username was existed in database"
+                        "description": "email was existed in database"
+                    },
+                    "400": {
+                        "description": "pass data error!"
                     }
                 }
             }
@@ -132,6 +135,13 @@
                         "description": "确认登出用户",
                         "required": true,
                         "type": "string"
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "确认用户登录状态",
+                        "required": true,
+                        "type": "string"
                     }
                 ],
                 "responses": {
@@ -194,7 +204,7 @@
                     },
                     {
                         "in": "body",
-                        "name": "body",
+                        "name": "data",
                         "description": "Updated user object",
                         "required": true,
                         "schema": {
@@ -247,13 +257,96 @@
                 }
             }
         },
+        "/project": {
+            "post": {
+                "tags": [
+                    "project"
+                ],
+                "summary": "http://10.120.1.135:8082/todo/project",
+                "description": "添加一个项目",
+                "operationId": "addProject",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "info about new plan",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/RequestProject"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "300": {
+                        "description": "invalid user"
+                    },
+                    "400": {
+                        "description": "exist project"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "project"
+                ],
+                "summary": "http://10.120.1.135:8080/todo/project?email=jing.zhan@ck-telecom.com&token=aaaaa",
+                "description": "获取用户参与的project",
+                "operationId": "getprojects",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "用户email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "token 确认登录状态",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "target_email",
+                        "in": "query",
+                        "type": "string",
+                        "description": "要查询的用户",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success operation",
+                        "schema": {
+                            "$ref": "#/definitions/ResponseProject"
+                        }
+                    },
+                    "300": {
+                        "description": "invalid user"
+                    },
+                    "400": {
+                        "description": "invaild parameters"
+                    }
+                }
+            }
+        },
         "/project/plan": {
             "get": {
-                "summary": "http://10.120.1.135:8082/todo/project/plan?usename=mozre&token=token&sprint=4&status=0",
+                "summary": "http://10.120.1.135:8080/todo/project/plan?email=mozre&token=token&sprint=4&status=0",
                 "description": "获取当前所有人的plan\n",
                 "parameters": [
                     {
-                        "name": "username",
+                        "name": "email",
                         "in": "query",
                         "description": "确定用户",
                         "required": true,
@@ -282,7 +375,7 @@
                     }
                 ],
                 "tags": [
-                    "project"
+                    "plan"
                 ],
                 "responses": {
                     "200": {
@@ -301,9 +394,9 @@
             },
             "post": {
                 "tags": [
-                    "project"
+                    "plan"
                 ],
-                "summary": "http://10.120.1.135:8082/todo/project/plan",
+                "summary": "http://10.120.1.135:8080/todo/project/plan",
                 "description": "添加一个计划",
                 "operationId": "addplan",
                 "produces": [
@@ -332,11 +425,11 @@
         },
         "/projcet/task": {
             "get": {
-                "summary": "http://10.120.1.135:8082/todo/project/task?username=mozre&token=token",
+                "summary": "http://10.120.1.135:8080/todo/project/task?email=mozre&token=token",
                 "description": "\"获取plan下的task\"\n",
                 "parameters": [
                     {
-                        "name": "username",
+                        "name": "email",
                         "in": "query",
                         "description": "确定用户",
                         "required": true,
@@ -358,7 +451,7 @@
                     }
                 ],
                 "tags": [
-                    "project"
+                    "task"
                 ],
                 "responses": {
                     "200": {
@@ -377,9 +470,9 @@
             },
             "post": {
                 "tags": [
-                    "project"
+                    "task"
                 ],
-                "summary": "http://10.120.1.135:8082/todo/project/task",
+                "summary": "http://10.120.1.135:8080/todo/project/task",
                 "description": "添加一个任务",
                 "operationId": "add task",
                 "consumes": [
@@ -401,9 +494,6 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "success operation"
-                    },
                     "405": {
                         "description": "Invalid form"
                     }
@@ -430,6 +520,12 @@
                 },
                 "mem_phone": {
                     "type": "string"
+                },
+                "mem_icon": {
+                    "type": "string"
+                },
+                "mem_level": {
+                    "type": "integer"
                 }
             },
             "xml": {
@@ -525,8 +621,14 @@
         "Task": {
             "type": "object",
             "properties": {
+                "plan_id": {
+                    "type": "string"
+                },
                 "men_id": {
                     "type": "integer"
+                },
+                "task_id": {
+                    "type": "string"
                 },
                 "task_title": {
                     "type": "string"
@@ -546,9 +648,6 @@
                 "task_start_time": {
                     "type": "string"
                 },
-                "task_end_time": {
-                    "type": "string"
-                },
                 "task_pridict_time": {
                     "type": "string"
                 },
@@ -557,16 +656,13 @@
                 },
                 "task_real_spend_time": {
                     "type": "string"
-                },
-                "task_update-time": {
-                    "type": "string"
                 }
             }
         },
         "RequestTask": {
             "type": "object",
             "properties": {
-                "username": {
+                "email": {
                     "type": "string"
                 },
                 "token": {
@@ -580,11 +676,17 @@
         "Plan": {
             "type": "object",
             "properties": {
-                "mem_id": {
+                "plan_id": {
+                    "type": "string"
+                },
+                "create_mem_id": {
+                    "type": "integer"
+                },
+                "execute_mem_id": {
                     "type": "integer"
                 },
                 "project_id": {
-                    "type": "integer"
+                    "type": "string"
                 },
                 "plan_name": {
                     "type": "string"
@@ -599,9 +701,6 @@
                     "type": "string"
                 },
                 "plan_create_time": {
-                    "type": "string"
-                },
-                "plan_latest_update_time": {
                     "type": "string"
                 },
                 "plan_state": {
@@ -623,14 +722,59 @@
         "RequestPlan": {
             "type": "object",
             "properties": {
-                "username": {
+                "email": {
                     "type": "string"
                 },
                 "token": {
                     "type": "string"
                 },
-                "task": {
+                "plan": {
                     "$ref": "#/definitions/Plan"
+                }
+            }
+        },
+        "Project": {
+            "type": "object",
+            "properties": {
+                "project_id": {
+                    "type": "string"
+                },
+                "project_name": {
+                    "type": "string"
+                },
+                "projcet_description": {
+                    "type": "string"
+                },
+                "mem_id": {
+                    "type": "string"
+                },
+                "project_visibility": {
+                    "type": "integer"
+                }
+            }
+        },
+        "RequestProject": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "token": {
+                    "type": "string"
+                },
+                "postproject": {
+                    "$ref": "#/definitions/Project"
+                }
+            }
+        },
+        "ResponseProject": {
+            "type": "object",
+            "properties": {
+                "projects": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Project"
+                    }
                 }
             }
         }

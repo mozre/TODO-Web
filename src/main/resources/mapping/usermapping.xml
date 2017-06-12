@@ -41,5 +41,8 @@
         INSERT INTO member(mem_name,mem_phone_num,mem_email,mem_icon,mem_level,mem_password) VALUES (#{mem_name},#{mem_phone_num},#{mem_email},#{mem_icon},#{mem_level},#{mem_password})
 
     </insert>
-
+    
+    <select id="getMemId" resultType="Integer">
+        SELECT mem_id FROM member WHERE mem_email = #{mem_email}
+    </select>
 </mapper>

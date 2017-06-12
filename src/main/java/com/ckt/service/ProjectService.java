@@ -10,7 +10,10 @@ import java.util.List;
 public interface ProjectService {
 
     void newProject(Project project);
+
     Project getProject(String id);
 
     List<Project> getProjects(Integer mem_id);
+
+    void sceenProject(List<Project> data);
 }

@@ -3,6 +3,7 @@ package com.ckt.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.ckt.entity.User;
 import com.ckt.service.UserService;
+import com.ckt.utils.HttpConstant;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.mgt.SecurityManager;
@@ -31,7 +32,7 @@ public class LoginController {
     @RequestMapping(value = "/user/login", method = RequestMethod.GET)
     @ResponseBody
     public String login(HttpServletRequest request, HttpServletResponse response) {
-        JSONObject object = new JSONObject();
+        JSONObject jsonResult = new JSONObject();
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         UsernamePasswordToken token = new UsernamePasswordToken(email, password);
@@ -67,17 +68,16 @@ public class LoginController {
             user.setMem_password(password);
             User us = userService.sele(user);
             String uToken = userService.getToken(us.getMem_id());
-            object.put("resultcode", 200);
-            object.put("data", us);
-            object.put("token", uToken);
+            jsonResult.put(HttpConstant.RESLUT_CODE, 200);
+            jsonResult.put("data", us);
+            jsonResult.put("token", uToken);
             System.out.println("用户[" + email + "]登录认证通过(这里可以进行一些认证通过后的一些系统参数初始化操作)");
         } else {
             token.clear();
-            object.put("resultcode", 400);
+            jsonResult.put("resultcode", 400);
         }
 
-
-        return object.toJSONString();
+        return jsonResult.toJSONString();
     }
 
 

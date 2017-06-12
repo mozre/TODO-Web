@@ -24,6 +24,8 @@ public class Project {
     private int teamId;
     //所属sprint
     private int sprint;
+    // project 可见性
+    private int projectVisibility;
 
     public String getProjectId() {
         return projectId;
@@ -103,5 +105,13 @@ public class Project {
 
     public void setSprint(int sprint) {
         this.sprint = sprint;
+    }
+
+    public int getProjectVisibility() {
+        return projectVisibility;
+    }
+
+    public void setProjectVisibility(int projectVisibility) {
+        this.projectVisibility = projectVisibility;
     }
 }

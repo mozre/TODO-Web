@@ -2,15 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d41c77dd-2f27-4e4c-9516-730d33311119" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/controller/PlanController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/utils/HTTPConstant.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/controller/TaskController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/dao/TaskDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/service/TaskService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/service/TaskServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapping/taskmapping.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/controller/LoginController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/controller/LogoutController.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/controller/LogoutController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/controller/PlanController.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/controller/PlanController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/controller/ProjectController.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/controller/ProjectController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/dao/ProjectDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/dao/ProjectDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/controller/SignupController.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/controller/SignupController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/dao/PlanDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/dao/PlanDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/dao/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/dao/UserDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/entity/Project.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/entity/Project.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/entity/Task.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/entity/Task.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/service/PlanService.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/service/PlanService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/service/PlanServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/service/PlanServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/service/ProjectService.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/service/ProjectService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/service/ProjectServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/service/ProjectServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/service/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/service/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/service/UserServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ckt/utils/HTTPConstant.java" afterPath="$PROJECT_DIR$/src/main/java/com/ckt/utils/HTTPConstant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/planmapping.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/planmapping.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/projectmapping.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/projectmapping.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.gitignore.txt" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/usermapping.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/usermapping.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swagger/swagger-app/dist/swagger.json" afterPath="$PROJECT_DIR$/swagger/swagger-app/dist/swagger.json" />
     </list>
     <ignored path="TODO-Web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,122 +51,12 @@
     <favorites_list name="TODO-Web" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ProjectController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/controller/ProjectController.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SignupController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/controller/SignupController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="79" column="49" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="49" />
-              <folding>
-                <element signature="docComment;class#ProjectController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlanController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/controller/PlanController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5798969">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/service/ProjectService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/service/ProjectServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-              <folding>
-                <element signature="e#540#541#0" expanded="true" />
-                <element signature="e#588#589#0" expanded="true" />
-                <element signature="e#658#659#0" expanded="true" />
-                <element signature="e#711#712#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HTTPConstant.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/utils/HTTPConstant.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="42" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="usermapping.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/usermapping.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.735294">
-              <caret line="33" column="39" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="39" />
-              <folding>
-                <marker date="1495701722662" expanded="true" signature="995:1047" placeholder="select * fro... member" />
-                <marker date="1495701722662" expanded="true" signature="1127:1214" placeholder="select * fro... member" />
-                <marker date="1495701722662" expanded="true" signature="1305:1362" placeholder="SELECT token... member" />
-                <marker date="1495701722662" expanded="true" signature="1416:1516" placeholder="UPDATE membe... " />
-                <marker date="1495701722662" expanded="true" signature="1602:1675" placeholder="select * fro... member" />
-                <marker date="1495701722662" expanded="true" signature="1726:1902" placeholder="INSERT INTO member... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projectmapping.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/projectmapping.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.911764">
-              <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
-              <folding>
-                <marker date="1496308279677" expanded="true" signature="1958:2323" placeholder="INSERT INTO project" />
-                <marker date="1496308279677" expanded="true" signature="2402:2457" placeholder="SELECT * FRO... project" />
-                <marker date="1496308279677" expanded="true" signature="2536:2582" placeholder="SELECT * FRO... project" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/dao/ProjectDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="43" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/entity/Project.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="21" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/dao/UserDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="49" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.26804122">
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -189,16 +97,11 @@
         <option value="$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.2.2/shiro-core-1.2.2.jar!/org/apache/shiro/mgt/DefaultSecurityManager.class" />
         <option value="$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.2.2/shiro-core-1.2.2.jar!/org/apache/shiro/subject/support/DelegatingSubject.class" />
         <option value="$PROJECT_DIR$/src/main/java/com/ckt/service/UserImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ckt/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ckt/utils/HTTPUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ckt/shiro/ShiroManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ckt/controller/LogoutController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ckt/controller/Register.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ckt/controller/RegisterController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ckt/entity/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ckt/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ckt/service/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ckt/controller/SignupController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/usermappting.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/swagger.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
@@ -208,20 +111,31 @@
         <option value="$PROJECT_DIR$/src/main/java/com/ckt/service/ProjectServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ckt/service/ProejectServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ckt/utils/MyBatisDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ckt/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ckt/entity/Project.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mybatis.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ckt/dao/Test.java" />
         <option value="$MAVEN_REPOSITORY$/org/apache/shiro/shiro-web/1.2.2/shiro-web-1.2.2.jar!/org/apache/shiro/web/servlet/AbstractShiroFilter.class" />
         <option value="$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.2.2/shiro-core-1.2.2.jar!/org/apache/shiro/subject/support/SubjectCallable.class" />
         <option value="$MAVEN_REPOSITORY$/org/apache/shiro/shiro-web/1.2.2/shiro-web-1.2.2.jar!/org/apache/shiro/web/servlet/OncePerRequestFilter.class" />
         <option value="$PROJECT_DIR$/src/main/java/com/ckt/utils/HTTPConstant.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ckt/service/ProjectService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ckt/service/ProjectServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ckt/dao/ProjectDao.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/projectmapping.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ckt/controller/ProjectController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ckt/controller/PlanController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ckt/controller/SignupController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/projectmapping.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ckt/entity/Project.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ckt/dao/ProjectDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ckt/service/ProjectServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ckt/service/ProjectService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/usermapping.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ckt/service/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ckt/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ckt/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ckt/controller/ProjectController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ckt/controller/TaskController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ckt/service/TaskService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ckt/service/TaskServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ckt/dao/TaskDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/taskmapping.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ckt/controller/LogoutController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ckt/controller/LoginController.java" />
       </list>
     </option>
   </component>
@@ -614,8 +528,8 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1190,11 +1104,18 @@
       <workItem from="1495706094900" duration="10056000" />
       <workItem from="1495782285534" duration="605000" />
       <workItem from="1496294416000" duration="5199000" />
+      <workItem from="1496628492102" duration="11660000" />
+      <workItem from="1496803778168" duration="1228000" />
+      <workItem from="1496831425271" duration="4316000" />
+      <workItem from="1496888946536" duration="7562000" />
+      <workItem from="1496974276220" duration="1634000" />
+      <workItem from="1496990050811" duration="4929000" />
+      <workItem from="1497235169780" duration="4116000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75144000" />
+    <option name="totallyTimeSpent" value="110589000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1232,7 +1153,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5649351" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34199134" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1286,21 +1207,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ckt/controller/ProjectController.java</url>
-          <line>43</line>
-          <properties />
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ckt/controller/ProjectController.java</url>
-          <line>81</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="27" />
+      <option name="time" value="41" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1309,48 +1216,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2762431">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.2.2/shiro-core-1.2.2.jar!/org/apache/shiro/subject/Subject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3505535">
-          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.2.2/shiro-core-1.2.2.jar!/org/apache/shiro/realm/AuthenticatingRealm.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.892858">
-          <caret line="212" column="0" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.2.2/shiro-core-1.2.2.jar!/org/apache/shiro/authc/pam/ModularRealmAuthenticator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.428571">
-          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.2.2/shiro-core-1.2.2.jar!/org/apache/shiro/mgt/AuthenticatingSecurityManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.785714">
-          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.2.2/shiro-core-1.2.2.jar!/org/apache/shiro/mgt/DefaultSecurityManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.214286">
-          <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.2.2/shiro-core-1.2.2.jar!/org/apache/shiro/authc/AbstractAuthenticator.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35362998">
@@ -1373,13 +1238,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35391924">
           <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/controller/SignupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1414,13 +1272,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/entity/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1432,13 +1283,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="79" column="37" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1465,30 +1309,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring-shiro.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.382353">
           <caret line="25" column="73" selection-start-line="25" selection-start-column="69" selection-end-line="25" selection-end-column="73" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="97" column="28" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
-          <folding>
-            <element signature="e#1816#1817#0" expanded="false" />
-            <element signature="e#1872#1873#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1508,19 +1333,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/controller/LogoutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.1.41/fastjson-1.1.41.jar!/com/alibaba/fastjson/JSONObject.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.892858">
           <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1528,7 +1344,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.642857">
           <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1536,7 +1351,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.642857">
           <caret line="441" column="0" selection-start-line="441" selection-start-column="0" selection-end-line="441" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1544,7 +1358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.642857">
           <caret line="420" column="0" selection-start-line="420" selection-start-column="0" selection-end-line="420" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1552,7 +1365,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.642857">
           <caret line="404" column="0" selection-start-line="404" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1560,7 +1372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.857143">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1568,7 +1379,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.964286">
           <caret line="289" column="17" selection-start-line="289" selection-start-column="17" selection-end-line="289" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1576,10 +1386,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9642856">
           <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
-          <folding>
-            <element signature="e#6240#6547#0" expanded="true" />
-            <element signature="e#6546#6547#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1587,7 +1393,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.071428">
           <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1595,7 +1400,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.642857">
           <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1603,7 +1407,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.178572">
           <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1611,7 +1414,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53763443">
           <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1619,34 +1421,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9408602">
           <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="49" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/usermapping.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.735294">
-          <caret line="33" column="39" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="39" />
-          <folding>
-            <marker date="1495701722662" expanded="true" signature="995:1047" placeholder="select * fro... member" />
-            <marker date="1495701722662" expanded="true" signature="1127:1214" placeholder="select * fro... member" />
-            <marker date="1495701722662" expanded="true" signature="1305:1362" placeholder="SELECT token... member" />
-            <marker date="1495701722662" expanded="true" signature="1416:1516" placeholder="UPDATE membe... " />
-            <marker date="1495701722662" expanded="true" signature="1602:1675" placeholder="select * fro... member" />
-            <marker date="1495701722662" expanded="true" signature="1726:1902" placeholder="INSERT INTO member... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/utils/HTTPConstant.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/utils/HttpConstant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="42" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="42" />
@@ -1654,12 +1432,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/controller/PlanController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/dao/ProjectDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/projectmapping.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="63" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
+          <folding>
+            <marker date="1496718044512" expanded="true" signature="2033:2438" placeholder="INSERT INTO project" />
+            <marker date="1496718044512" expanded="true" signature="2517:2572" placeholder="SELECT * FRO... project" />
+            <marker date="1496718044512" expanded="true" signature="2651:2697" placeholder="SELECT * FRO... project" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/service/ProjectService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/usermapping.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+          <folding>
+            <marker date="1496719347809" expanded="true" signature="995:1047" placeholder="select * fro... member" />
+            <marker date="1496719347809" expanded="true" signature="1127:1214" placeholder="select * fro... member" />
+            <marker date="1496719347809" expanded="true" signature="1305:1362" placeholder="SELECT token... member" />
+            <marker date="1496719347809" expanded="true" signature="1416:1516" placeholder="UPDATE membe... " />
+            <marker date="1496719347809" expanded="true" signature="1602:1675" placeholder="select * fro... member" />
+            <marker date="1496719347809" expanded="true" signature="1726:1902" placeholder="INSERT INTO member... " />
+            <marker date="1496719347809" expanded="true" signature="1979:2035" placeholder="SELECT mem_i... member" />
           </folding>
         </state>
       </provider>
@@ -1667,12 +1493,42 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/service/ProjectServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
           <folding>
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="e#588#589#0" expanded="true" />
-            <element signature="e#658#659#0" expanded="true" />
-            <element signature="e#711#712#0" expanded="true" />
+            <element signature="e#658#659#0" expanded="false" />
+            <element signature="e#711#712#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="129" column="23" selection-start-line="129" selection-start-column="23" selection-end-line="129" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3016#3017#0" expanded="true" />
+            <element signature="e#3062#3063#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="11" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1680,53 +1536,111 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/entity/Project.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/dao/ProjectDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/projectmapping.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.911764">
-          <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
-          <folding>
-            <marker date="1496308279677" expanded="true" signature="1958:2323" placeholder="INSERT INTO project" />
-            <marker date="1496308279677" expanded="true" signature="2402:2457" placeholder="SELECT * FRO... project" />
-            <marker date="1496308279677" expanded="true" signature="2536:2582" placeholder="SELECT * FRO... project" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.0.2.RELEASE/spring-web-4.0.2.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3594203">
-          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/controller/ProjectController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="79" column="49" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.022346368">
+          <caret line="97" column="9" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
           <folding>
             <element signature="docComment;class#ProjectController#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/controller/PlanController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/dao/TaskDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5798969">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.44692737">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/dao/TaskDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/taskmapping.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+          <folding>
+            <marker date="1496911143172" expanded="true" signature="1125:1541" placeholder="INSERT INTO task... " />
+            <marker date="1496911143172" expanded="true" signature="1618:1662" placeholder="SELECT * FRO... task" />
+            <marker date="1496911143172" expanded="true" signature="1741:1786" placeholder="SELECT * FRO... task" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/entity/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.0.2.RELEASE/spring-web-4.0.2.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18036072">
+          <caret line="130" column="19" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/service/TaskServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#616#617#0" expanded="false" />
+            <element signature="e#666#667#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/controller/LogoutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0267857">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/service/TaskService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5181347">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/controller/TaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04317789">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21588947">
+          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ckt/controller/SignupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26804122">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding />
         </state>
       </provider>

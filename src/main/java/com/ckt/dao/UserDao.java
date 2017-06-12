@@ -48,4 +48,6 @@ public interface UserDao {
     void updateToken(@Param("mem_id") int id, @Param("token") String token, @Param("token_create_time") long token_create_time);
 
     User loginStatus(@Param("mem_email") String email, @Param("token") String token);
+
+    Integer getMemId(@Param("mem_email") String email);
 }
