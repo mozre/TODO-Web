@@ -16,4 +16,8 @@ public interface PlanDao {
      void newPlan(Plan plan);
 
      List<Plan> getPlans(@Param("memID") Integer id,@Param("sprint") int sprint, @Param("planState") int status);
+
+     void deletePlan(@Param("planID") String planId);
+
+     Plan selectPlan(@Param("planID") String planId);
 }

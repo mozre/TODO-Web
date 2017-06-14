@@ -26,4 +26,14 @@ public class PlanServiceImpl implements PlanService {
     public List<Plan> getPlans(int mem_id, int sprint, int status) {
         return planDao.getPlans(mem_id,sprint,status);
     }
+
+    @Override
+    public void deletePlan(String planId) {
+        planDao.deletePlan(planId);
+    }
+
+    @Override
+    public Plan selectPlan(String planId) {
+        return planDao.selectPlan(planId);
+    }
 }

@@ -33,6 +33,11 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
+    public void deleteProject(String id) {
+        projectDao.deleteProject(id);
+    }
+
+    @Override
     public void sceenProject(List<Project> data) {
         for (Project project : data) {
             if (project.getProjectVisibility() == 0) {

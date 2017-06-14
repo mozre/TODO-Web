@@ -135,4 +135,29 @@ public class ProjectController {
         return resultJson.toJSONString();
     }
 
+    @RequestMapping(value = "/project/delete", method = RequestMethod.GET)
+    @ResponseBody
+    public String deleteProject(HttpServletRequest request,HttpServletResponse response){
+        JSONObject resultJson = new JSONObject();
+        try {
+            String email = request.getParameter("email");
+            String token = request.getParameter("token");
+            User user = userService.loginStatus(email, token);
+            if (user == null) {
+                resultJson.put(HttpConstant.RESLUT_CODE, 300);
+            } else {
+                String projectId = request.getParameter("project_id");
+                Project project = projectService.getProject(projectId);
+                if (project != null) {
+                    projectService.deleteProject(projectId);
+                }
+                resultJson.put(HttpConstant.RESLUT_CODE, 200);
+            }
+        } catch (Exception e) {
+            resultJson.put(HttpConstant.RESLUT_CODE, 400);
+            e.printStackTrace();
+        }
+
+        return resultJson.toJSONString();
+    }
 }

@@ -15,18 +15,6 @@
         <result column="project_sprint_count" property="sprint"/>
         <result column="project_visibility" property="projectVisibility"/>
     </resultMap>
-    <!--<resultMap id="BaseResultMap" type="com.ckt.entity.Project">-->
-    <!--<result column="project_id" property="projectId" jdbcType="VARCHAR"/>-->
-    <!--<result column="team_id" property="teamId" jdbcType="INTEGER"/>-->
-    <!--<result column="mem_id" property="memId" jdbcType="INTEGER"/>-->
-    <!--<result column="project_name" property="projectTitle" jdbcType="VARCHAR"/>-->
-    <!--<result column="project_description" property="projectSummary" jdbcType="VARCHAR"/>-->
-    <!--<result column="project_create_time" property="createTime" jdbcType="VARCHAR"/>-->
-    <!--<result column="project_end_time" property="endTime" jdbcType="VARCHAR"/>-->
-    <!--<result column="project_latest_update_time" property="lastUpdateTime" jdbcType="VARCHAR"/>-->
-    <!--<result column="project_acomplish_progress" property="accomplishProgress" jdbcType="VARCHAR"/>-->
-    <!--<result column="project_sprint_count" property="sprint" jdbcType="INTEGER"/>-->
-    <!--</resultMap>-->
 
 
     <insert id="insertProject">
@@ -42,4 +30,8 @@
     <select id="getProjects" resultMap="BaseResultMap">
         SELECT * FROM  project WHERE mem_id = #{memId}
     </select>
+
+    <delete id="deleteProject">
+        DELETE FROM project WHERE  project_id = #{projectId}
+    </delete>
 </mapper>

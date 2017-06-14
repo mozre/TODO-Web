@@ -90,4 +90,28 @@ public class PlanController {
         return resultJson.toJSONString();
     }
 
+    @RequestMapping(value = "project/plan/delete", method = RequestMethod.GET)
+    @ResponseBody
+    public String delPlan(HttpServletRequest request, HttpServletResponse response) {
+        JSONObject resultJson = new JSONObject();
+        try {
+            String email = request.getParameter("email");
+            String token = request.getParameter("token");
+            User user = userService.loginStatus(email, token);
+            if (user == null) {
+                resultJson.put(HttpConstant.RESLUT_CODE, 300);
+            } else {
+                String planId = request.getParameter("plan_id");
+                Plan plan = planService.selectPlan(planId);
+                if (plan != null) {
+                    planService.deletePlan(planId);
+                }
+                resultJson.put(HttpConstant.RESLUT_CODE, 200);
+            }
+        } catch (Exception e) {
+            resultJson.put(HttpConstant.RESLUT_CODE, 400);
+            e.printStackTrace();
+        }
+        return resultJson.toJSONString();
+    }
 }

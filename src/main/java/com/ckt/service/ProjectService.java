@@ -16,4 +16,6 @@ public interface ProjectService {
     List<Project> getProjects(Integer mem_id);
 
     void sceenProject(List<Project> data);
+
+    void deleteProject(String id);
 }

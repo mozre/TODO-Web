@@ -11,4 +11,6 @@ public interface PlanService {
 
     void newPlan(Plan plan);
     List<Plan> getPlans(int mem_id,int sprint,int status);
+    void deletePlan(String planId);
+    Plan selectPlan(String planId);
 }

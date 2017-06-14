@@ -29,4 +29,12 @@
         SELECT * FROM plan where mem_id = #{memID} AND sprint = #{sprint} AND plan_state = #{planState}
     </select>
 
+    <select id="selectPlan" resultMap="BaseResultMap">
+        SELECT * FROM plan WHERE plan_id = #{planID}
+    </select>
+
+    <delete id="deletePlan">
+        DELETE FROM plan WHERE plan_id = #{planID}
+    </delete>
+
 </mapper>

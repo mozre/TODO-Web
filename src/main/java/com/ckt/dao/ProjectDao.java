@@ -17,4 +17,6 @@ public interface ProjectDao {
     Project getProject(@Param("projectId") String id);
 
     List<Project> getProjects(@Param("memId") Integer mem_id);
+
+    void deleteProject(@Param("projectId") String id);
 }
