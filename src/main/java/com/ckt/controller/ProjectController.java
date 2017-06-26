@@ -33,7 +33,6 @@ public class ProjectController {
     @RequestMapping(value = "/project", method = RequestMethod.POST)
     @ResponseBody
     public String newProject(HttpServletRequest request, HttpServletResponse response) {
-
         JSONObject object = new JSONObject();
         try {
             String email = request.getParameter("email");
@@ -45,56 +44,21 @@ public class ProjectController {
                 project.setProjectId(data.getString("project_id"));
                 Project exPro = projectService.getProject(data.getString("project_id"));
                 if (exPro != null) {
-                    object.put("resultcode", 400);
+                    object.put(HttpConstant.RESLUT_CODE, 400);
                 } else {
-                    project.setMemId(data.getInteger("mem_id"));
-                    project.setProjectTitle(data.getString("project_name"));
-                    if (data.containsKey("project_description")) {
-                        project.setProjectSummary(data.getString("project_description"));
-                    } else {
-                        project.setProjectSummary("");
-                    }
-                    if (data.containsKey("project_end_time")) {
-                        project.setEndTime(data.getString("project_end_time"));
-                    } else {
-                        project.setEndTime("");
-                    }
-                    project.setCreateTime(data.getString("project_create_time"));
-                    if (data.containsKey("project_acomplish_progress")) {
-                        project.setAccomplishProgress(data.getString("project_acomplish_progress"));
-                    } else {
-                        project.setAccomplishProgress("0");
-                    }
-                    if (data.containsKey("project_sprint_count")) {
-                        project.setSprint(data.getInteger("project_sprint_count"));
-                    } else {
-                        project.setSprint(1);
-                    }
-                    if (data.containsKey("team_id")) {
-                        project.setTeamId(data.getInteger("team_id"));
-                    } else {
-                        project.setTeamId(1);
-                    }
-                    if (data.containsKey("project_visibility")) {
-                        project.setProjectVisibility(data.getInteger("project_visibility"));
-                    } else {
-                        project.setProjectVisibility(0);
-                    }
-                    project.setLastUpdateTime(String.valueOf(System.currentTimeMillis()));
+                    projectService.convertProject(data, project);
                     projectService.newProject(project);
-                    object.put("resultcode", 200);
+                    object.put(HttpConstant.RESLUT_CODE, 200);
                 }
             } else {
-                object.put("resultcode", 300);
+                object.put(HttpConstant.RESLUT_CODE, 300);
             }
-
         } catch (NullPointerException e) {
             e.printStackTrace();
-            object.put("resultcode", 500);
-
+            object.put(HttpConstant.RESLUT_CODE, 500);
         } catch (Exception e) {
             e.printStackTrace();
-            object.put("resultcode", 600);
+            object.put(HttpConstant.RESLUT_CODE, 600);
         }
 
         return object.toJSONString();
@@ -137,7 +101,7 @@ public class ProjectController {
 
     @RequestMapping(value = "/project/delete", method = RequestMethod.GET)
     @ResponseBody
-    public String deleteProject(HttpServletRequest request,HttpServletResponse response){
+    public String deleteProject(HttpServletRequest request, HttpServletResponse response) {
         JSONObject resultJson = new JSONObject();
         try {
             String email = request.getParameter("email");
@@ -160,4 +124,66 @@ public class ProjectController {
 
         return resultJson.toJSONString();
     }
+
+    @RequestMapping(value = "/project/modify", method = RequestMethod.POST)
+    @ResponseBody
+    public String modifyProject(HttpServletRequest request, HttpServletResponse response) {
+        JSONObject object = new JSONObject();
+        try {
+            String email = request.getParameter("email");
+            String token = request.getParameter("token");
+            User user = userService.loginStatus(email, token);
+            if (user != null) {
+                Project project = new Project();
+                JSONObject data = JSON.parseObject(request.getParameter("postproject"));
+                project.setProjectId(data.getString("project_id"));
+                Project exPro = projectService.getProject(data.getString("project_id"));
+                if (exPro == null) {
+                    object.put(HttpConstant.RESLUT_CODE, 400);
+                } else {
+                    projectService.convertProject(data, project);
+                    projectService.modifyProject(project);
+                    object.put(HttpConstant.RESLUT_CODE, 200);
+                }
+            } else {
+                object.put(HttpConstant.RESLUT_CODE, 300);
+            }
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            object.put(HttpConstant.RESLUT_CODE, 500);
+        } catch (Exception e) {
+            e.printStackTrace();
+            object.put(HttpConstant.RESLUT_CODE, 600);
+        }
+
+        return object.toJSONString();
+    }
+
+    @RequestMapping(value = "/project/sprint", method = RequestMethod.GET)
+    @ResponseBody
+    public String addNewSprint(HttpServletRequest request, HttpServletResponse response) {
+        JSONObject resultJson = new JSONObject();
+        try {
+            String email = request.getParameter("email");
+            String token = request.getParameter("token");
+            User user = userService.loginStatus(email, token);
+            if (user != null) {
+                int sprint = Integer.valueOf(request.getParameter("sprint"));
+                String projectId = request.getParameter("projectId");
+                Integer saveSprint = projectService.selectSprint(projectId);
+                if (sprint == (saveSprint + 1)) {
+                    projectService.newSprint(sprint,projectId);
+                    resultJson.put(HttpConstant.RESLUT_CODE, 200);
+                }else {
+                    resultJson.put(HttpConstant.RESLUT_CODE, 400);
+                }
+            } else {
+                resultJson.put(HttpConstant.RESLUT_CODE, 300);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return resultJson.toJSONString();
+    }
+
 }

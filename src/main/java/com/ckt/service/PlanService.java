@@ -9,8 +9,15 @@ import java.util.List;
  */
 public interface PlanService {
 
-    void newPlan(Plan plan);
-    List<Plan> getPlans(int mem_id,int sprint,int status);
-    void deletePlan(String planId);
-    Plan selectPlan(String planId);
+    void newPlan(Plan plan) throws Exception;
+
+    List<Plan> getPlans(int mem_id, int sprint, int status) throws Exception;
+
+    void deletePlan(String planId) throws Exception;
+
+    Plan selectPlan(String planId) throws Exception;
+
+    Plan convertPlan(String jsonString) throws Exception;
+
+    void modifyPlan(Plan plan) throws Exception;
 }

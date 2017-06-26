@@ -36,5 +36,14 @@
     <delete id="deletePlan">
         DELETE FROM plan WHERE plan_id = #{planID}
     </delete>
-
+    <update id="modifyPlan">
+        UPDATE plan
+        SET
+        mem_id = #{memID}, project_id = #{projectID}, plan_name = #{planName}, plan_descrition = #{planDescrition}
+        , plan_start_time = #{planStartTime}, plan_end_time = #{planEndTime}, plan_create_time = #{planCreateTime}
+        , plan_latest_update_time = #{planLastUpdateTime}, plan_state = #{planState}, plan_acomplish_progress = #{planAcomplishProgress}
+        , plan_real_spend_time = #{planRealSpendTime}, sprint = #{sprint}
+        WHERE
+        plan_id = #{planID}
+    </update>
 </mapper>

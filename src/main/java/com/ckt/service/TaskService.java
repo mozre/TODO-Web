@@ -9,8 +9,15 @@ import java.util.List;
  */
 public interface TaskService {
 
-    void newTask(Task task);
-    List<Task> getTasks(String planId);
+    void newTask(Task task) throws Exception;
 
-    List<Task> getTaskById(Integer mem_id);
+    List<Task> getTasks(String planId) throws Exception;
+
+    List<Task> getTaskById(Integer mem_id) throws Exception;
+
+    Task getTask(String taskId) throws Exception;
+
+    Task convertTask(String jsonStr) throws Exception;
+
+    void modifyTask(Task task) throws Exception;
 }

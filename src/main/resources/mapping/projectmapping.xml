@@ -34,4 +34,24 @@
     <delete id="deleteProject">
         DELETE FROM project WHERE  project_id = #{projectId}
     </delete>
+
+    <update id="modifyProject">
+        UPDATE project
+        SET
+        team_id = #{teamId}, mem_id = #{memId}, project_name = #{projectTitle}, project_description = #{projectSummary}
+        ,project_create_time = #{createTime}, project_end_time = #{endTime}, project_latest_update_time = #{lastUpdateTime}
+        ,project_acomplish_progress = #{accomplishProgress}, project_sprint_count = #{sprint}, project_visibility = #{projectVisibility}
+        WHERE
+        project_id = #{projectId}
+    </update>
+    <select id="selectSprint" resultType="Integer">
+        SELECT project_sprint_count FROM project WHERE project_id = #{projectId}
+    </select>
+    <update id="newSprint">
+        UPDATE project
+        SET
+        project_sprint_count = #{sprint}
+        WHERE
+         project_id = #{projectId}
+    </update>
 </mapper>

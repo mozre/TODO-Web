@@ -14,9 +14,16 @@ import java.util.List;
 public interface ProjectDao {
 
     void insertProject(Project project);
+
     Project getProject(@Param("projectId") String id);
 
     List<Project> getProjects(@Param("memId") Integer mem_id);
 
     void deleteProject(@Param("projectId") String id);
+
+    void modifyProject(Project project);
+
+    Integer selectSprint(@Param("projectId") String projectId);
+
+    void newSprint(@Param("sprint") int sprint, @Param("projectId") String projectId);
 }

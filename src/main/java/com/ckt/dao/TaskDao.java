@@ -19,4 +19,8 @@ public interface TaskDao {
     List<Task> getTasks(@Param("planId") String planId);
 
     List<Task> getTaskById(@Param("mem_id") Integer mem_id);
+
+    Task getTask(@Param("taskId") String taskId);
+
+    void modifyTask(Task task);
 }

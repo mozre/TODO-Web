@@ -1,6 +1,5 @@
 package com.ckt.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.ckt.entity.Plan;
 import com.ckt.entity.User;
@@ -40,21 +39,7 @@ public class PlanController {
             if (user == null) {
                 resultJson.put(HttpConstant.RESLUT_CODE, 300);
             } else {
-                Plan plan = new Plan();
-                JSONObject dataJson = JSON.parseObject(request.getParameter("plan"));
-                plan.setPlanID(dataJson.getString("plan_id"));
-                plan.setMemID(dataJson.getInteger("mem_id"));
-                plan.setProjectID(dataJson.getString("project_id"));
-                plan.setPlanName(dataJson.getString("plan_name"));
-                plan.setPlanDescrition(dataJson.getString("plan_description"));
-                plan.setPlanStartTime(dataJson.getString("plan_start_time"));
-                plan.setPlanEndTime(dataJson.getString("plan_end_time"));
-                plan.setPlanCreateTime(dataJson.getString("plan_create_time"));
-                plan.setPlanLastUpdateTime(String.valueOf(System.currentTimeMillis()));
-                plan.setPlanState(dataJson.getInteger("plan_state"));
-                plan.setPlanRealSpendTime(dataJson.getString("plan_real_spend_time"));
-                plan.setSprint(dataJson.getInteger("sprint"));
-                plan.setPlanAcomplishProgress(dataJson.getString("plan_acomplish_progress"));
+                Plan plan = planService.convertPlan(request.getParameter("plan"));
                 planService.newPlan(plan);
                 resultJson.put(HttpConstant.RESLUT_CODE, 200);
             }
@@ -114,4 +99,36 @@ public class PlanController {
         }
         return resultJson.toJSONString();
     }
+
+    @RequestMapping(value = "project/plan/modify", method = RequestMethod.POST)
+    @ResponseBody
+    public String modifyPlan(HttpServletRequest request, HttpServletResponse response) {
+        JSONObject resultJson = new JSONObject();
+        try {
+            String email = request.getParameter("email");
+            String token = request.getParameter("token");
+            User user = userService.loginStatus(email, token);
+            if (user == null) {
+                resultJson.put(HttpConstant.RESLUT_CODE, 300);
+            } else {
+                Plan plan = planService.convertPlan(request.getParameter("plan"));
+                Plan selectPlan = planService.selectPlan(plan.getPlanID());
+                if (selectPlan != null) {
+                    planService.modifyPlan(plan);
+                    resultJson.put(HttpConstant.RESLUT_CODE, 200);
+                } else {
+                    resultJson.put(HttpConstant.RESLUT_CODE, 400);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            resultJson.put(HttpConstant.RESLUT_CODE, 400);
+        }
+
+        return resultJson.toJSONString();
+    }
+
+//    @RequestMapping(value = "project/plan/modify", method = RequestMethod.GET)
+//    @ResponseBody
+//    public String changePlanStatus()
 }

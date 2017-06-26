@@ -40,21 +40,7 @@ public class TaskController {
             if (user == null) {
                 resultJson.put(HttpConstant.RESLUT_CODE, 300);
             } else {
-                Task task = new Task();
-                JSONObject dataJson = JSON.parseObject(request.getParameter("task"));
-                task.setPlanId(dataJson.getString("plan_id"));
-                task.setMem_id(dataJson.getInteger("men_id"));
-                task.setTaskId(dataJson.getString("task_id"));
-                task.setTaskTitle(dataJson.getString("task_title"));
-                task.setTaskContent(dataJson.getString("task_content"));
-                task.setTaskType(dataJson.getInteger("task_type"));
-                task.setTaskPriority(dataJson.getInteger("task_prioirty"));
-                task.setTaskStatus(dataJson.getInteger("task_status"));
-                task.setTaskStartTime(dataJson.getString("task_start_time"));
-                task.setTaskPredictTime(dataJson.getString("task_pridict_time"));
-                task.setTaskRemindTime(dataJson.getString("task_remind_time"));
-                task.setTaskRealSpendTime(dataJson.getString("task_real_spend_time"));
-                task.setTaskUpdateTime(String.valueOf(System.currentTimeMillis()));
+                Task task = taskService.convertTask(request.getParameter("task"));
                 taskService.newTask(task);
                 resultJson.put(HttpConstant.RESLUT_CODE, 200);
             }
@@ -122,5 +108,32 @@ public class TaskController {
         return resultJson.toJSONString();
     }
 
+    @RequestMapping(value = "project/plan/task/modify")
+    @ResponseBody
+    public String modifyTask(HttpServletRequest request, HttpServletResponse response) {
+        JSONObject resultJson = new JSONObject();
+        try {
+            String email = request.getParameter("email");
+            String token = request.getParameter("token");
+            User user = userService.loginStatus(email, token);
+            if (user == null) {
+                resultJson.put(HttpConstant.RESLUT_CODE, 300);
+            } else {
+                Task task = taskService.convertTask(request.getParameter("task"));
+                Task exTask = taskService.getTask(task.getTaskId());
+                if(exTask ==null){
+                    resultJson.put(HttpConstant.RESLUT_CODE, 400);
+                }else {
+                    taskService.modifyTask(task);
+                    resultJson.put(HttpConstant.RESLUT_CODE, 200);
+                }
+            }
+        } catch (Exception e) {
+            resultJson.put(HttpConstant.RESLUT_CODE, 400);
+            e.printStackTrace();
+        }
+
+        return resultJson.toJSONString();
+    }
 
 }

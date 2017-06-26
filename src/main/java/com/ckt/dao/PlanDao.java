@@ -20,4 +20,6 @@ public interface PlanDao {
      void deletePlan(@Param("planID") String planId);
 
      Plan selectPlan(@Param("planID") String planId);
+
+     void modifyPlan(Plan plan);
 }

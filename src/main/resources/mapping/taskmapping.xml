@@ -31,4 +31,16 @@
     <select id="getTaskById" resultMap="BaseResultMap">
         SELECT * FROM  task WHERE  mem_id = #{mem_id}
     </select>
+    <select id="getTask" resultMap="BaseResultMap">
+        SELECT * FROM task WHERE  task_id = #{taskId}
+    </select>
+    <update id="modifyTask">
+        UPDATE task
+        SET
+        mem_id = #{mem_id}, plan_id = #{planId}, task_title = #{taskTitle}, task_content = #{taskContent}, task_type = #{taskType}
+        ,task_priority = #{taskPriority}, task_status = #{taskStatus}, task_start_time = #{taskStartTime}, task_predict_time = #{taskPredictTime}
+        ,task_remind_time = #{taskRemindTime}, task_real_spend_time = #{taskRealSpendTime}, task_update_time = #{taskUpdateTime}
+        WHERE
+        task_id = #{taskId}
+    </update>
 </mapper>
